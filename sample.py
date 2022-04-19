@@ -75,7 +75,7 @@ sns.set()
 
 from PIL import Image
 
-st.title('Customer Reponse Classifier')
+st.title('Audio Classifier')
 
 uploaded_file = st.file_uploader("Upload audio")
 
