@@ -3,4 +3,3 @@ tensorflow
 librosa
 sklearn
 numpy
-libsndfile1-dev
