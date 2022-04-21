@@ -20,22 +20,22 @@ claim_res_model = load_model('./Claim_Process_1.h5')
 def predict_customer_res(audio):
     prob=customer_res_model.predict(audio.reshape(1,40,1))
     index=np.argmax(prob[0])
-    return classes[index]
+    return (classes[index],np.amax(prob[0]))
     
 def predict_pricing(audio):
     prob=pricing_res_model.predict(audio.reshape(1,40,1))
     index=np.argmax(prob[0])
-    return classes[index]
+    return (classes[index],np.amax(prob[0]))
 
 def predict_exclusion(audio):
     prob=exclusions_res_model.predict(audio.reshape(1,40,1))
     index=np.argmax(prob[0])
-    return classes[index]
+    return (classes[index],np.amax(prob[0]))
 
 def predict_claim(audio):
     prob=claim_res_model.predict(audio.reshape(1,40,1))
     index=np.argmax(prob[0])
-    return classes[index]
+    return (classes[index],np.amax(prob[0]))
     
 def extract_feature(file_name):
       X, sample_rate = librosa.load(file_name)
