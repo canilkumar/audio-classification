@@ -92,16 +92,16 @@ if uploaded_file is not None:
         featuesAll=extract_feature(test_sample1)
         
         customer_res = predict_customer_res(featuesAll)
-        st.title("customer response: "+ customer_res[0]+" Confidence: "+customer_res[1])
-         
+        st.title("customer response: "+ customer_res[0])
+         # " Confidence: "+customer_res[1]
         pricing_res = predict_pricing(featuesAll)
-        st.title("pricing explained: "+ pricing_res[0]+" Confidence: "+pricing_res[1])
+        st.title("pricing explained: "+ pricing_res[0])
         
         exclusions_res = predict_exclusion(featuesAll)
-        st.title("exclusions explained: "+ exclusions_res[0]+" Confidence "+exclusions_res[1])
+        st.title("exclusions explained: "+ exclusions_res[0])
         
         claim_res = predict_claim(featuesAll)
-        st.title("claim process explained: "+ claim_res[0]+" Confidence "+claim_res[1])
+        st.title("claim process explained: "+ claim_res[0])
         
 
 
