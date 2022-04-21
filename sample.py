@@ -93,7 +93,7 @@ if uploaded_file is not None:
         
         customer_res = predict_customer_res(featuesAll)
         st.title("customer response: "+ customer_res[0])
-        print(customer_res[1])
+       st.title("customer response conf: "+ str(customer_res[1]))
          # " Confidence: "+customer_res[1]
         pricing_res = predict_pricing(featuesAll)
         st.title("pricing explained: "+ pricing_res[0])
