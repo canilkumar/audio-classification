@@ -8,13 +8,13 @@ le = LabelEncoder()
 y = le.fit_transform(['No','Yes'])
 classes = list(le.classes_)
 
-customer_res_model = load_model('./Customer_Response_1.h5')
+customer_res_model = load_model('./Customer_Response_13.h5')
 
-pricing_res_model = load_model('./Pricing_1.h5')
+pricing_res_model = load_model('./Pricing_13.h5')
 
-exclusions_res_model = load_model('./Insurance_Exclusion_1.h5')
+exclusions_res_model = load_model('./Insurance_Exclusion_13.h5')
 
-claim_res_model = load_model('./Claim_Process_1.h5')
+claim_res_model = load_model('./Claim_Process_13.h5')
 
 
 def predict_customer_res(audio):
