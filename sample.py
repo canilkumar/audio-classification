@@ -16,6 +16,12 @@ exclusions_res_model = load_model('./Insurance_Exclusion_13.h5')
 
 claim_res_model = load_model('./Claim_Process_13.h5')
 
+callClasification_res_model = load_model('./call_audio.h5')
+
+def predict_callClasification_res(audio):
+    prob=callClasification_res_model.predict(audio.reshape(1,40,1))
+    index=np.argmax(prob[0])
+    return (classes[index],np.amax(prob[0]))
 
 def predict_customer_res(audio):
     prob=customer_res_model.predict(audio.reshape(1,40,1))
@@ -90,6 +96,10 @@ if uploaded_file is not None:
         data, sampling_rate = librosa.load(test_sample1)
         
         featuesAll=extract_feature(test_sample1)
+        
+        call_res = predict_callClasification_res(featuesAll)
+        st.title("Is a call : "+ call_res[0]+" Confidence: "+str(call_res[1]*100))
+        
         
         customer_res = predict_customer_res(featuesAll)
         st.title("customer response: "+ customer_res[0]+" Confidence: "+str(customer_res[1]*100))
