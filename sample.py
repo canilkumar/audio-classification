@@ -157,6 +157,15 @@ if uploaded_file is not None:
         call_res = predict_callClasification_res(featuesAll)
         st.title("Is a call : "+ call_res[0]+" Confidence: "+str(call_res[1]*100))
 
+        st.title("Exclusion Points")
+        st.title("1.By consuming alcohol if you facing any dieses and death then policy will not claim")
+        st.title("2.If you not following doctors advice then policy will not claimed")
+        st.title("3.If you attempt suicide or any other thing which is affected you then policy will not claimed")
+        st.title("4.If Natural Calamity( Disaster) Happens that time if Government Declair Emergency then Policy is not Eligible")
+        st.title("5.If you infect and died during country war when country has declared emergency then policy will not claimed")
+        st.title("6.If you face any infection during cosmetic treatment and the policy is not more than 9 month then you will not claimed")
+        st.title("7.Before 3 months you have cancer and blindness then apply for claim then you not eligible for claim process")
+
         if(call_res[0] =='Yes'):
          customer_res = predict_customer_res(featuesAll)
          st.title("customer response: "+ customer_res[0]+" Confidence: "+str(customer_res[1]*100))
