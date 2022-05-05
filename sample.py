@@ -18,6 +18,18 @@ claim_res_model = load_model('./Claim_Process_13.h5')
 
 callClasification_res_model = load_model('./call_audio.h5')
 
+exclusions_1_res_model = load_model('./Exclusions_1.h5')
+exclusions_2_res_model = load_model('./Exclusions_2.h5')
+exclusions_3_res_model = load_model('./Exclusions_3.h5')
+exclusions_4_res_model = load_model('./Exclusions_4.h5')
+exclusions_5_res_model = load_model('./Exclusions_5.h5')
+exclusions_6_res_model = load_model('./Exclusions_6.h5')
+exclusions_7_res_model = load_model('./Exclusions_7.h5')
+
+daily_price_res_model = load_model('./Daily_Pricing.h5')
+monthly_price_res_model = load_model('./Monthly_Pricing.h5')
+
+
 def predict_callClasification_res(audio):
     prob=callClasification_res_model.predict(audio.reshape(1,40,1))
     index=np.argmax(prob[0])
@@ -40,6 +52,51 @@ def predict_exclusion(audio):
 
 def predict_claim(audio):
     prob=claim_res_model.predict(audio.reshape(1,40,1))
+    index=np.argmax(prob[0])
+    return (classes[index],np.amax(prob[0]))
+
+def predict_exclusion_1(audio):
+    prob=exclusions_1_res_model.predict(audio.reshape(1,40,1))
+    index=np.argmax(prob[0])
+    return (classes[index],np.amax(prob[0]))
+
+def predict_exclusion_2(audio):
+    prob=exclusions_2_res_model.predict(audio.reshape(1,40,1))
+    index=np.argmax(prob[0])
+    return (classes[index],np.amax(prob[0]))
+
+def predict_exclusion_3(audio):
+    prob=exclusions_3_res_model.predict(audio.reshape(1,40,1))
+    index=np.argmax(prob[0])
+    return (classes[index],np.amax(prob[0]))
+
+def predict_exclusion_4(audio):
+    prob=exclusions_4_res_model.predict(audio.reshape(1,40,1))
+    index=np.argmax(prob[0])
+    return (classes[index],np.amax(prob[0]))
+
+def predict_exclusion_5(audio):
+    prob=exclusions_5_res_model.predict(audio.reshape(1,40,1))
+    index=np.argmax(prob[0])
+    return (classes[index],np.amax(prob[0]))
+
+def predict_exclusion_6(audio):
+    prob=exclusions_6_res_model.predict(audio.reshape(1,40,1))
+    index=np.argmax(prob[0])
+    return (classes[index],np.amax(prob[0]))
+
+def predict_exclusion_7(audio):
+    prob=exclusions_7_res_model.predict(audio.reshape(1,40,1))
+    index=np.argmax(prob[0])
+    return (classes[index],np.amax(prob[0]))
+
+def predict_daily_price(audio):
+    prob=daily_price_res_model.predict(audio.reshape(1,40,1))
+    index=np.argmax(prob[0])
+    return (classes[index],np.amax(prob[0]))
+
+def predict_monthly_price(audio):
+    prob=monthly_price_res_model.predict(audio.reshape(1,40,1))
     index=np.argmax(prob[0])
     return (classes[index],np.amax(prob[0]))
     
@@ -99,22 +156,47 @@ if uploaded_file is not None:
         
         call_res = predict_callClasification_res(featuesAll)
         st.title("Is a call : "+ call_res[0]+" Confidence: "+str(call_res[1]*100))
-        
-        
-        customer_res = predict_customer_res(featuesAll)
-        st.title("customer response: "+ customer_res[0]+" Confidence: "+str(customer_res[1]*100))
-        #st.title("customer response conf: "+ str(customer_res[1]))
+
+        if(call_res[0] =='Yes'):
+         customer_res = predict_customer_res(featuesAll)
+         st.title("customer response: "+ customer_res[0]+" Confidence: "+str(customer_res[1]*100))
+         #st.title("customer response conf: "+ str(customer_res[1]))
          # " Confidence: "+customer_res[1]
-        pricing_res = predict_pricing(featuesAll)
-        st.title("pricing explained: "+ pricing_res[0]+" Confidence: "+str(pricing_res[1]*100))
+         pricing_res = predict_pricing(featuesAll)
+         st.title("pricing explained: "+ pricing_res[0]+" Confidence: "+str(pricing_res[1]*100))
         
-        exclusions_res = predict_exclusion(featuesAll)
-        st.title("exclusions explained: "+ exclusions_res[0]+" Confidence: "+str(exclusions_res[1]*100))
+         exclusions_res = predict_exclusion(featuesAll)
+         st.title("exclusions explained: "+ exclusions_res[0]+" Confidence: "+str(exclusions_res[1]*100))
         
-        claim_res = predict_claim(featuesAll)
-        st.title("claim process explained: "+ claim_res[0]+" Confidence: "+str(claim_res[1]*100))
+         claim_res = predict_claim(featuesAll)
+         st.title("claim process explained: "+ claim_res[0]+" Confidence: "+str(claim_res[1]*100))
+
+         exclusions_1_res = predict_exclusion_1(featuesAll)
+         st.title("exclusions explained: "+ exclusions_1_res[0]+" Confidence: "+str(exclusions_1_res[1]*100))
+
+         exclusions_2_res = predict_exclusion_2(featuesAll)
+         st.title("exclusions explained: "+ exclusions_2_res[0]+" Confidence: "+str(exclusions_2_res[1]*100))
+        
+         exclusions_3_res = predict_exclusion_3(featuesAll)
+         st.title("exclusions explained: "+ exclusions_3_res[0]+" Confidence: "+str(exclusions_3_res[1]*100))
+         
+         exclusions_4_res = predict_exclusion_4(featuesAll)
+         st.title("exclusions explained: "+ exclusions_4_res[0]+" Confidence: "+str(exclusions_4_res[1]*100))
+         
+         exclusions_5_res = predict_exclusion_5(featuesAll)
+         st.title("exclusions explained: "+ exclusions_5_res[0]+" Confidence: "+str(exclusions_5_res[1]*100))
+        
+         exclusions_6_res = predict_exclusion_6(featuesAll)
+         st.title("exclusions explained: "+ exclusions_6_res[0]+" Confidence: "+str(exclusions_6_res[1]*100))
+         
+         exclusions_7_res = predict_exclusion_7(featuesAll)
+         st.title("exclusions explained: "+ exclusions_7_res[0]+" Confidence: "+str(exclusions_7_res[1]*100))
+        
         
 
+        
+        
+       
 
 
 
