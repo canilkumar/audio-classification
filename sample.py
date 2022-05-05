@@ -162,35 +162,41 @@ if uploaded_file is not None:
          st.title("customer response: "+ customer_res[0]+" Confidence: "+str(customer_res[1]*100))
          #st.title("customer response conf: "+ str(customer_res[1]))
          # " Confidence: "+customer_res[1]
-         pricing_res = predict_pricing(featuesAll)
-         st.title("pricing explained: "+ pricing_res[0]+" Confidence: "+str(pricing_res[1]*100))
+        #  pricing_res = predict_pricing(featuesAll)
+        #  st.title("pricing explained: "+ pricing_res[0]+" Confidence: "+str(pricing_res[1]*100))
         
-         exclusions_res = predict_exclusion(featuesAll)
-         st.title("exclusions explained: "+ exclusions_res[0]+" Confidence: "+str(exclusions_res[1]*100))
+        #  exclusions_res = predict_exclusion(featuesAll)
+        #  st.title("exclusions explained: "+ exclusions_res[0]+" Confidence: "+str(exclusions_res[1]*100))
         
          claim_res = predict_claim(featuesAll)
          st.title("claim process explained: "+ claim_res[0]+" Confidence: "+str(claim_res[1]*100))
 
          exclusions_1_res = predict_exclusion_1(featuesAll)
-         st.title("exclusions explained: "+ exclusions_1_res[0]+" Confidence: "+str(exclusions_1_res[1]*100))
+         st.title("exclusions 1 explained: "+ exclusions_1_res[0]+" Confidence: "+str(exclusions_1_res[1]*100))
 
          exclusions_2_res = predict_exclusion_2(featuesAll)
-         st.title("exclusions explained: "+ exclusions_2_res[0]+" Confidence: "+str(exclusions_2_res[1]*100))
+         st.title("exclusions 2 explained: "+ exclusions_2_res[0]+" Confidence: "+str(exclusions_2_res[1]*100))
         
          exclusions_3_res = predict_exclusion_3(featuesAll)
-         st.title("exclusions explained: "+ exclusions_3_res[0]+" Confidence: "+str(exclusions_3_res[1]*100))
+         st.title("exclusions 3 explained: "+ exclusions_3_res[0]+" Confidence: "+str(exclusions_3_res[1]*100))
          
          exclusions_4_res = predict_exclusion_4(featuesAll)
-         st.title("exclusions explained: "+ exclusions_4_res[0]+" Confidence: "+str(exclusions_4_res[1]*100))
+         st.title("exclusions 4 explained: "+ exclusions_4_res[0]+" Confidence: "+str(exclusions_4_res[1]*100))
          
          exclusions_5_res = predict_exclusion_5(featuesAll)
-         st.title("exclusions explained: "+ exclusions_5_res[0]+" Confidence: "+str(exclusions_5_res[1]*100))
+         st.title("exclusions 5 explained: "+ exclusions_5_res[0]+" Confidence: "+str(exclusions_5_res[1]*100))
         
          exclusions_6_res = predict_exclusion_6(featuesAll)
-         st.title("exclusions explained: "+ exclusions_6_res[0]+" Confidence: "+str(exclusions_6_res[1]*100))
+         st.title("exclusions 6 explained: "+ exclusions_6_res[0]+" Confidence: "+str(exclusions_6_res[1]*100))
          
          exclusions_7_res = predict_exclusion_7(featuesAll)
-         st.title("exclusions explained: "+ exclusions_7_res[0]+" Confidence: "+str(exclusions_7_res[1]*100))
+         st.title("exclusions 7 explained: "+ exclusions_7_res[0]+" Confidence: "+str(exclusions_7_res[1]*100))
+         
+         daily_price_res = predict_daily_price(featuesAll)
+         st.title("daily price explained: "+ daily_price_res[0]+" Confidence: "+str(daily_price_res[1]*100))
+         
+         monthly_price_res = predict_monthly_price(featuesAll)
+         st.title("monthly price explained: "+ monthly_price_res[0]+" Confidence: "+str(monthly_price_res[1]*100))
         
         
 
