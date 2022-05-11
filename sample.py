@@ -14,7 +14,7 @@ pricing_res_model = load_model('./Pricing_13.h5')
 
 exclusions_res_model = load_model('./Insurance_Exclusion_13.h5')
 
-claim_res_model = load_model('./Claim_Process_13.h5')
+claim_res_model = load_model('./Claim_Process_27.h5')
 
 callClasification_res_model = load_model('./call_audio.h5')
 
@@ -26,8 +26,8 @@ exclusions_5_res_model = load_model('./Exclusions_5.h5')
 exclusions_6_res_model = load_model('./Exclusions_6.h5')
 exclusions_7_res_model = load_model('./Exclusions_7.h5')
 
-daily_price_res_model = load_model('./Daily_Pricing.h5')
-monthly_price_res_model = load_model('./Monthly_Pricing.h5')
+daily_price_res_model = load_model('./Daily_Pricing_1.h5')
+monthly_price_res_model = load_model('./Monthly_Pricing_1.h5')
 
 
 def predict_callClasification_res(audio):
