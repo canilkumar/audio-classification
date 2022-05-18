@@ -200,7 +200,7 @@ if uploaded_file is not None:
          claim_res = predict_claim(featuesAll)
          st.title("claim process explained: "+ claim_res[0]+" Confidence: "+str(claim_res[1]*100))
 
-         st.title("Exclusion Points")
+         st.title("Exclusion Points explanation")
 
          exclusions_1_res = predict_exclusion_1(featuesAll)
          st.title("1.Khudkushi: "+ exclusions_1_res[0]+" Confidence: "+str(exclusions_1_res[1]*100))
