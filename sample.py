@@ -29,8 +29,8 @@ exclusions_8_res_model = load_model('./Ex_8.h5')
 exclusions_9_res_model = load_model('./Ex_9.h5')
 exclusions_10_res_model = load_model('./Ex_10.h5')
 
-daily_price_res_model = load_model('./Daily_Pricing_1.h5')
-monthly_price_res_model = load_model('./Monthly_Pricing_1.h5')
+daily_price_res_model = load_model('./Daily_Pricing_2.h5')
+monthly_price_res_model = load_model('./Monthly_Pricing_2.h5')
 
 
 def predict_callClasification_res(audio):
