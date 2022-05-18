@@ -183,12 +183,12 @@ if uploaded_file is not None:
 
         
         call_res = predict_callClasification_res(featuesAll)
-        st.title("Is a call : "+ call_res[0]+" Confidence: "+str(call_res[1]*100))
+        st.write("Is a call : "+ call_res[0]+" Confidence: "+str(call_res[1]*100))
 
         
         if(call_res[0] =='Yes'):
          customer_res = predict_customer_res(featuesAll)
-         st.title("customer response: "+ customer_res[0]+" Confidence: "+str(customer_res[1]*100))
+         st.write("customer response: "+ customer_res[0]+" Confidence: "+str(customer_res[1]*100))
          #st.title("customer response conf: "+ str(customer_res[1]))
          # " Confidence: "+customer_res[1]
         #  pricing_res = predict_pricing(featuesAll)
@@ -198,47 +198,47 @@ if uploaded_file is not None:
         #  st.title("exclusions explained: "+ exclusions_res[0]+" Confidence: "+str(exclusions_res[1]*100))
         
          claim_res = predict_claim(featuesAll)
-         st.title("claim process explained: "+ claim_res[0]+" Confidence: "+str(claim_res[1]*100))
+         st.write("claim process explained: "+ claim_res[0]+" Confidence: "+str(claim_res[1]*100))
 
          st.title("Exclusion Points explanation")
 
          exclusions_1_res = predict_exclusion_1(featuesAll)
-         st.title("1.Khudkushi: "+ exclusions_1_res[0]+" Confidence: "+str(exclusions_1_res[1]*100))
+         st.write("1.Khudkushi: "+ exclusions_1_res[0]+" Confidence: "+str(exclusions_1_res[1]*100))
 
          exclusions_2_res = predict_exclusion_2(featuesAll)
-         st.title("2.Halat Jang: "+ exclusions_2_res[0]+" Confidence: "+str(exclusions_2_res[1]*100))
+         st.write("2.Halat Jang: "+ exclusions_2_res[0]+" Confidence: "+str(exclusions_2_res[1]*100))
         
          exclusions_3_res = predict_exclusion_3(featuesAll)
-         st.title("3.Agwa Baray Tawan: "+ exclusions_3_res[0]+" Confidence: "+str(exclusions_3_res[1]*100))
+         st.write("3.Agwa Baray Tawan: "+ exclusions_3_res[0]+" Confidence: "+str(exclusions_3_res[1]*100))
          
          exclusions_4_res = predict_exclusion_4(featuesAll)
-         st.title("4.Manshiyat ya kisi b Nasha Awar cheez k Istemal se Nuqsan: "+ exclusions_4_res[0]+" Confidence: "+str(exclusions_4_res[1]*100))
+         st.write("4.Manshiyat ya kisi b Nasha Awar cheez k Istemal se Nuqsan: "+ exclusions_4_res[0]+" Confidence: "+str(exclusions_4_res[1]*100))
          
          exclusions_5_res = predict_exclusion_5(featuesAll)
-         st.title("5.Qudarti Afat ya Dehshat Gardana Karwai me bare pemane pr hone walay Nuq: "+ exclusions_5_res[0]+" Confidence: "+str(exclusions_5_res[1]*100))
+         st.write("5.Qudarti Afat ya Dehshat Gardana Karwai me bare pemane pr hone walay Nuq: "+ exclusions_5_res[0]+" Confidence: "+str(exclusions_5_res[1]*100))
         
          exclusions_6_res = predict_exclusion_6(featuesAll)
-         st.title("6.Civil Nafarmani ki surat mea policy claim nahi hoge: "+ exclusions_6_res[0]+" Confidence: "+str(exclusions_6_res[1]*100))
+         st.write("6.Civil Nafarmani ki surat mea policy claim nahi hoge: "+ exclusions_6_res[0]+" Confidence: "+str(exclusions_6_res[1]*100))
          
          exclusions_7_res = predict_exclusion_7(featuesAll)
-         st.title("7.Hifazat Plus mein Khud ko jaan bhooj kar pohanchaye Janay walay nuqsan, khudkhushi ki koshish: "
+         st.write("7.Hifazat Plus mein Khud ko jaan bhooj kar pohanchaye Janay walay nuqsan, khudkhushi ki koshish: "
          + exclusions_7_res[0]+" Confidence: "+str(exclusions_7_res[1]*100))
          
          exclusions_8_res = predict_exclusion_7(featuesAll)
-         st.title("8.doctor k mashawary se laparwahi ki surat mein honay wala nuqsan: "+ exclusions_8_res[0]+" Confidence: "+str(exclusions_8_res[1]*100))
+         st.write("8.doctor k mashawary se laparwahi ki surat mein honay wala nuqsan: "+ exclusions_8_res[0]+" Confidence: "+str(exclusions_8_res[1]*100))
          
          exclusions_9_res = predict_exclusion_7(featuesAll)
-         st.title("9.cosmetic surgery jo k ghair zaroori ho jaisa k chehray ki khoobsurti barhanay jaisay treatment: "+ exclusions_9_res[0]+" Confidence: "+str(exclusions_9_res[1]*100))
+         st.write("9.cosmetic surgery jo k ghair zaroori ho jaisa k chehray ki khoobsurti barhanay jaisay treatment: "+ exclusions_9_res[0]+" Confidence: "+str(exclusions_9_res[1]*100))
          
          exclusions_10_res = predict_exclusion_7(featuesAll)
-         st.title("10.Koi bhi baari tibi bemari jis ki tashkhees coverage shuru honay se 3 maah pehlay hoi ho: "+ exclusions_10_res[0]+" Confidence: "+str(exclusions_10_res[1]*100))
+         st.write("10.Koi bhi baari tibi bemari jis ki tashkhees coverage shuru honay se 3 maah pehlay hoi ho: "+ exclusions_10_res[0]+" Confidence: "+str(exclusions_10_res[1]*100))
          
 
          daily_price_res = predict_daily_price(featuesAll)
-         st.title("daily price explained: "+ daily_price_res[0]+" Confidence: "+str(daily_price_res[1]*100))
+         st.write("daily price explained: "+ daily_price_res[0]+" Confidence: "+str(daily_price_res[1]*100))
          
          monthly_price_res = predict_monthly_price(featuesAll)
-         st.title("monthly price explained: "+ monthly_price_res[0]+" Confidence: "+str(monthly_price_res[1]*100))
+         st.write("monthly price explained: "+ monthly_price_res[0]+" Confidence: "+str(monthly_price_res[1]*100))
         
         
 
