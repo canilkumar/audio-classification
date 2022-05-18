@@ -18,13 +18,16 @@ claim_res_model = load_model('./Claim_Process_27.h5')
 
 callClasification_res_model = load_model('./call_audio.h5')
 
-exclusions_1_res_model = load_model('./Exclusions_1.h5')
-exclusions_2_res_model = load_model('./Exclusions_2.h5')
-exclusions_3_res_model = load_model('./Exclusions_3.h5')
-exclusions_4_res_model = load_model('./Exclusions_4.h5')
-exclusions_5_res_model = load_model('./Exclusions_5.h5')
-exclusions_6_res_model = load_model('./Exclusions_6.h5')
-exclusions_7_res_model = load_model('./Exclusions_7.h5')
+exclusions_1_res_model = load_model('./Ex_1.h5')
+exclusions_2_res_model = load_model('./Ex_2.h5')
+exclusions_3_res_model = load_model('./Ex_3.h5')
+exclusions_4_res_model = load_model('./Ex_4.h5')
+exclusions_5_res_model = load_model('./Ex_5.h5')
+exclusions_6_res_model = load_model('./Ex_6.h5')
+exclusions_7_res_model = load_model('./Ex_7.h5')
+exclusions_8_res_model = load_model('./Ex_8.h5')
+exclusions_9_res_model = load_model('./Ex_9.h5')
+exclusions_10_res_model = load_model('./Ex_10.h5')
 
 daily_price_res_model = load_model('./Daily_Pricing_1.h5')
 monthly_price_res_model = load_model('./Monthly_Pricing_1.h5')
@@ -87,6 +90,21 @@ def predict_exclusion_6(audio):
 
 def predict_exclusion_7(audio):
     prob=exclusions_7_res_model.predict(audio.reshape(1,40,1))
+    index=np.argmax(prob[0])
+    return (classes[index],np.amax(prob[0]))
+
+def predict_exclusion_8(audio):
+    prob=exclusions_8_res_model.predict(audio.reshape(1,40,1))
+    index=np.argmax(prob[0])
+    return (classes[index],np.amax(prob[0]))
+
+def predict_exclusion_9(audio):
+    prob=exclusions_9_res_model.predict(audio.reshape(1,40,1))
+    index=np.argmax(prob[0])
+    return (classes[index],np.amax(prob[0]))
+
+def predict_exclusion_10(audio):
+    prob=exclusions_10_res_model.predict(audio.reshape(1,40,1))
     index=np.argmax(prob[0])
     return (classes[index],np.amax(prob[0]))
 
@@ -154,14 +172,14 @@ if uploaded_file is not None:
         
         featuesAll=extract_feature(test_sample1)
 
-        st.title("Exclusion Points")
-        st.title("1.By consuming alcohol if you facing any dieses and death then policy will not claim")
-        st.title("2.If you not following doctors advice then policy will not claimed")
-        st.title("3.If you attempt suicide or any other thing which is affected you then policy will not claimed")
-        st.title("4.If Natural Calamity( Disaster) Happens that time if Government Declair Emergency then Policy is not Eligible")
-        st.title("5.If you infect and died during country war when country has declared emergency then policy will not claimed")
-        st.title("6.If you face any infection during cosmetic treatment and the policy is not more than 9 month then you will not claimed")
-        st.title("7.Before 3 months you have cancer and blindness then apply for claim then you not eligible for claim process")
+        
+        # st.title("1.By consuming alcohol if you facing any dieses and death then policy will not claim")
+        # st.title("2.If you not following doctors advice then policy will not claimed")
+        # st.title("3.If you attempt suicide or any other thing which is affected you then policy will not claimed")
+        # st.title("4.If Natural Calamity( Disaster) Happens that time if Government Declair Emergency then Policy is not Eligible")
+        # st.title("5.If you infect and died during country war when country has declared emergency then policy will not claimed")
+        # st.title("6.If you face any infection during cosmetic treatment and the policy is not more than 9 month then you will not claimed")
+        # st.title("7.Before 3 months you have cancer and blindness then apply for claim then you not eligible for claim process")
 
         
         call_res = predict_callClasification_res(featuesAll)
@@ -182,27 +200,40 @@ if uploaded_file is not None:
          claim_res = predict_claim(featuesAll)
          st.title("claim process explained: "+ claim_res[0]+" Confidence: "+str(claim_res[1]*100))
 
+         st.title("Exclusion Points")
+
          exclusions_1_res = predict_exclusion_1(featuesAll)
-         st.title("exclusions 1 explained: "+ exclusions_1_res[0]+" Confidence: "+str(exclusions_1_res[1]*100))
+         st.title("1.Khudkushi: "+ exclusions_1_res[0]+" Confidence: "+str(exclusions_1_res[1]*100))
 
          exclusions_2_res = predict_exclusion_2(featuesAll)
-         st.title("exclusions 2 explained: "+ exclusions_2_res[0]+" Confidence: "+str(exclusions_2_res[1]*100))
+         st.title("2.Halat Jang: "+ exclusions_2_res[0]+" Confidence: "+str(exclusions_2_res[1]*100))
         
          exclusions_3_res = predict_exclusion_3(featuesAll)
-         st.title("exclusions 3 explained: "+ exclusions_3_res[0]+" Confidence: "+str(exclusions_3_res[1]*100))
+         st.title("3.Agwa Baray Tawan: "+ exclusions_3_res[0]+" Confidence: "+str(exclusions_3_res[1]*100))
          
          exclusions_4_res = predict_exclusion_4(featuesAll)
-         st.title("exclusions 4 explained: "+ exclusions_4_res[0]+" Confidence: "+str(exclusions_4_res[1]*100))
+         st.title("4.Manshiyat ya kisi b Nasha Awar cheez k Istemal se Nuqsan: "+ exclusions_4_res[0]+" Confidence: "+str(exclusions_4_res[1]*100))
          
          exclusions_5_res = predict_exclusion_5(featuesAll)
-         st.title("exclusions 5 explained: "+ exclusions_5_res[0]+" Confidence: "+str(exclusions_5_res[1]*100))
+         st.title("5.Qudarti Afat ya Dehshat Gardana Karwai me bare pemane pr hone walay Nuq: "+ exclusions_5_res[0]+" Confidence: "+str(exclusions_5_res[1]*100))
         
          exclusions_6_res = predict_exclusion_6(featuesAll)
-         st.title("exclusions 6 explained: "+ exclusions_6_res[0]+" Confidence: "+str(exclusions_6_res[1]*100))
+         st.title("6.Civil Nafarmani ki surat mea policy claim nahi hoge: "+ exclusions_6_res[0]+" Confidence: "+str(exclusions_6_res[1]*100))
          
          exclusions_7_res = predict_exclusion_7(featuesAll)
-         st.title("exclusions 7 explained: "+ exclusions_7_res[0]+" Confidence: "+str(exclusions_7_res[1]*100))
+         st.title("7.Hifazat Plus mein Khud ko jaan bhooj kar pohanchaye Janay walay nuqsan, khudkhushi ki koshish: "
+         + exclusions_7_res[0]+" Confidence: "+str(exclusions_7_res[1]*100))
          
+         exclusions_8_res = predict_exclusion_7(featuesAll)
+         st.title("8.doctor k mashawary se laparwahi ki surat mein honay wala nuqsan: "+ exclusions_8_res[0]+" Confidence: "+str(exclusions_8_res[1]*100))
+         
+         exclusions_9_res = predict_exclusion_7(featuesAll)
+         st.title("9.cosmetic surgery jo k ghair zaroori ho jaisa k chehray ki khoobsurti barhanay jaisay treatment: "+ exclusions_9_res[0]+" Confidence: "+str(exclusions_9_res[1]*100))
+         
+         exclusions_10_res = predict_exclusion_7(featuesAll)
+         st.title("10.Koi bhi baari tibi bemari jis ki tashkhees coverage shuru honay se 3 maah pehlay hoi ho: "+ exclusions_10_res[0]+" Confidence: "+str(exclusions_10_res[1]*100))
+         
+
          daily_price_res = predict_daily_price(featuesAll)
          st.title("daily price explained: "+ daily_price_res[0]+" Confidence: "+str(daily_price_res[1]*100))
          
