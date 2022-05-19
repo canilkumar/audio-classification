@@ -183,14 +183,15 @@ if uploaded_file is not None:
 
         
         call_res = predict_callClasification_res(featuesAll)
-        st.markdown("Is a call : <b>"+ call_res[0]+"</b> Confidence: <b>"+str(call_res[1]*100)+"</b>", unsafe_allow_html=True)
+        st.markdown("Is it a call : <b>"+ call_res[0]+"</b> Confidence: <b>"+str(call_res[1]*100)+"</b>", unsafe_allow_html=True)
 
-        st.write("Is a call : "+ call_res[0]+" Confidence: "+str(call_res[1]*100))
+        # st.write("Is a call : "+ call_res[0]+" Confidence: "+str(call_res[1]*100))
 
         
         if(call_res[0] =='Yes'):
          customer_res = predict_customer_res(featuesAll)
-         st.write("customer response: "+ customer_res[0]+" Confidence: "+str(customer_res[1]*100))
+         st.markdown("customer response: <b>"+ customer_res[0]+"</b> Confidence: <b>"+str(customer_res[1]*100)+"</b>", unsafe_allow_html=True)
+         #st.write("customer response: "+ customer_res[0]+" Confidence: "+str(customer_res[1]*100))
          #st.title("customer response conf: "+ str(customer_res[1]))
          # " Confidence: "+customer_res[1]
         #  pricing_res = predict_pricing(featuesAll)
@@ -200,47 +201,49 @@ if uploaded_file is not None:
         #  st.title("exclusions explained: "+ exclusions_res[0]+" Confidence: "+str(exclusions_res[1]*100))
         
          claim_res = predict_claim(featuesAll)
-         st.write("claim process explained: "+ claim_res[0]+" Confidence: "+str(claim_res[1]*100))
+         st.markdown("claim process explained: <b>"+ claim_res[0]+"</b> Confidence: <b>"+str(claim_res[1]*100)+"</b>", unsafe_allow_html=True)
+
+         #st.write("claim process explained: "+ claim_res[0]+" Confidence: "+str(claim_res[1]*100))
 
          st.title("Exclusion Points explanation")
 
          exclusions_1_res = predict_exclusion_1(featuesAll)
-         st.write("1.Khudkushi: "+ exclusions_1_res[0]+" Confidence: "+str(exclusions_1_res[1]*100))
+         st.markdown("1.Khudkushi explained: <b>"+ exclusions_1_res[0]+"</b> Confidence: <b>"+str(exclusions_1_res[1]*100)+"</b>", unsafe_allow_html=True)
 
          exclusions_2_res = predict_exclusion_2(featuesAll)
-         st.write("2.Halat Jang: "+ exclusions_2_res[0]+" Confidence: "+str(exclusions_2_res[1]*100))
+         st.markdown("2.Halat Jang explained: <b>"+ exclusions_2_res[0]+"</b> Confidence: <b>"+str(exclusions_2_res[1]*100)+"</b>", unsafe_allow_html=True)
         
          exclusions_3_res = predict_exclusion_3(featuesAll)
-         st.write("3.Agwa Baray Tawan: "+ exclusions_3_res[0]+" Confidence: "+str(exclusions_3_res[1]*100))
+         st.markdown("3.Agwa Baray Tawan explained: <b>"+ exclusions_3_res[0]+"</b> Confidence: <b>"+str(exclusions_3_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_4_res = predict_exclusion_4(featuesAll)
-         st.write("4.Manshiyat ya kisi b Nasha Awar cheez k Istemal se Nuqsan: "+ exclusions_4_res[0]+" Confidence: "+str(exclusions_4_res[1]*100))
+         st.markdown("4.Manshiyat ya kisi b Nasha Awar cheez k Istemal se Nuqsan explained: <b>"+ exclusions_4_res[0]+"</b> Confidence: <b>"+str(exclusions_4_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_5_res = predict_exclusion_5(featuesAll)
-         st.write("5.Qudarti Afat ya Dehshat Gardana Karwai me bare pemane pr hone walay Nuq: "+ exclusions_5_res[0]+" Confidence: "+str(exclusions_5_res[1]*100))
+         st.markdown("5.Qudarti Afat ya Dehshat Gardana Karwai me bare pemane pr hone walay Nuq explained: <b>"+ exclusions_5_res[0]+"</b> Confidence: <b>"+str(exclusions_5_res[1]*100)+"</b>", unsafe_allow_html=True)
         
          exclusions_6_res = predict_exclusion_6(featuesAll)
-         st.write("6.Civil Nafarmani ki surat mea policy claim nahi hoge: "+ exclusions_6_res[0]+" Confidence: "+str(exclusions_6_res[1]*100))
+         st.markdown("6.Civil Nafarmani ki surat mea policy claim nahi hoge explained: <b>"+ exclusions_6_res[0]+"</b> Confidence: <b>"+str(exclusions_6_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_7_res = predict_exclusion_7(featuesAll)
-         st.write("7.Hifazat Plus mein Khud ko jaan bhooj kar pohanchaye Janay walay nuqsan, khudkhushi ki koshish: "
-         + exclusions_7_res[0]+" Confidence: "+str(exclusions_7_res[1]*100))
+         st.markdown("7.Hifazat Plus mein Khud ko jaan bhooj kar pohanchaye Janay walay nuqsan, khudkhushi ki koshish explained: <b>"
+         + exclusions_7_res[0]+"</b> Confidence: <b>"+str(exclusions_7_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_8_res = predict_exclusion_7(featuesAll)
-         st.write("8.doctor k mashawary se laparwahi ki surat mein honay wala nuqsan: "+ exclusions_8_res[0]+" Confidence: "+str(exclusions_8_res[1]*100))
+         st.markdown("8.doctor k mashawary se laparwahi ki surat mein honay wala nuqsan explained: <b>"+ exclusions_8_res[0]+"</b> Confidence: <b>"+str(exclusions_8_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_9_res = predict_exclusion_7(featuesAll)
-         st.write("9.cosmetic surgery jo k ghair zaroori ho jaisa k chehray ki khoobsurti barhanay jaisay treatment: "+ exclusions_9_res[0]+" Confidence: "+str(exclusions_9_res[1]*100))
+         st.markdown("9.cosmetic surgery jo k ghair zaroori ho jaisa k chehray ki khoobsurti barhanay jaisay treatment explained: <b>"+ exclusions_9_res[0]+"</b> Confidence: <b>"+str(exclusions_9_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_10_res = predict_exclusion_7(featuesAll)
-         st.write("10.Koi bhi baari tibi bemari jis ki tashkhees coverage shuru honay se 3 maah pehlay hoi ho: "+ exclusions_10_res[0]+" Confidence: "+str(exclusions_10_res[1]*100))
+         st.markdown("10.Koi bhi baari tibi bemari jis ki tashkhees coverage shuru honay se 3 maah pehlay hoi ho explained: <b>"+ exclusions_10_res[0]+"</b> Confidence: <b>"+str(exclusions_10_res[1]*100)+"</b>", unsafe_allow_html=True)
          
 
          daily_price_res = predict_daily_price(featuesAll)
-         st.write("daily price explained: "+ daily_price_res[0]+" Confidence: "+str(daily_price_res[1]*100))
+         st.markdown("daily price explained: <b>"+ daily_price_res[0]+"</b> Confidence: <b>"+str(daily_price_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          monthly_price_res = predict_monthly_price(featuesAll)
-         st.write("monthly price explained: "+ monthly_price_res[0]+" Confidence: "+str(monthly_price_res[1]*100))
+         st.markdown("monthly price explained: <b>"+ monthly_price_res[0]+"</b> Confidence: <b>"+str(monthly_price_res[1]*100)+"</b>", unsafe_allow_html=True)
         
         
 
