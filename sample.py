@@ -137,7 +137,12 @@ def save_uploaded_file(uploaded_file):
 
     except:
 
-        return 0      
+        return 0
+
+def boldTag(status):
+    if (status=='Yes'):
+        return "<b style=color:green;>"
+    return "<b style=color:red;>"
 from helper import *
 
 #importing all the helper fxn from helper.py which we will create later
@@ -183,7 +188,7 @@ if uploaded_file is not None:
 
         
         call_res = predict_callClasification_res(featuesAll)
-        st.markdown("Is it a call : <b>"+ call_res[0]+"</b> Confidence: <b>"+str(call_res[1]*100)+"</b>", unsafe_allow_html=True)
+        st.markdown("Is it a call: "+boldTag(call_res[0]) + call_res[0]+"</b> Confidence: <b>"+str(call_res[1]*100)+"</b>", unsafe_allow_html=True)
 
         # st.write("Is a call : "+ call_res[0]+" Confidence: "+str(call_res[1]*100))
 
