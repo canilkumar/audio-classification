@@ -238,7 +238,7 @@ if uploaded_file is not None:
          st.markdown("8.doctor k mashawary se laparwahi ki surat mein honay wala nuqsan explained: "+boldTag(exclusions_8_res[0])+ exclusions_8_res[0]+"</b> Confidence: <b>"+str(exclusions_8_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_9_res = predict_exclusion_9(featuesAll)
-         st.markdown("9.cosmetic surgery jo k ghair zaroori ho jaisa k chehray ki khoobsurti barhanay jaisay treatment explained: "+boldTag(exclusions_9_res[0])+ exclusions_9_res[0]+"</b> Confidence: <b>"+str(exclusions_9_res[1]*100)+"</b>", unsafe_allow_html=True)
+         st.markdown("9.cosmetic surgery jo k ghair zaroori ho jaisa k chehray ki khoobsurti barhanay jaisay treatment,Doran e hamal honay wali koi bhi paicheedgi jab k sarifko service liye huay 9 maheenay ka arsa na hua ho explained: "+boldTag(exclusions_9_res[0])+ exclusions_9_res[0]+"</b> Confidence: <b>"+str(exclusions_9_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_10_res = predict_exclusion_10(featuesAll)
          st.markdown("10.Koi bhi baari tibi bemari jis ki tashkhees coverage shuru honay se 3 maah pehlay hoi ho explained: "+boldTag(exclusions_10_res[0])+ exclusions_10_res[0]+"</b> Confidence: <b>"+str(exclusions_10_res[1]*100)+"</b>", unsafe_allow_html=True)
