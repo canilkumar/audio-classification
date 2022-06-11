@@ -20,7 +20,7 @@ callClasification_res_model = load_model('./call_audio.h5')
 
 exclusions_1_res_model = load_model('./ex_101.h5')
 exclusions_2_res_model = load_model('./ex_21.h5')
-exclusions_3_res_model = load_model('./ex_3.h5')
+exclusions_3_res_model = load_model('./ex_31.h5')
 exclusions_4_res_model = load_model('./ex_4.h5')
 exclusions_5_res_model = load_model('./ex_5.h5')
 exclusions_6_res_model = load_model('./ex_6.h5')
