@@ -18,16 +18,19 @@ claim_res_model = load_model('./Cp_3.h5')
 
 callClasification_res_model = load_model('./call_audio.h5')
 
-exclusions_1_res_model = load_model('./Ex_1.h5')
-exclusions_2_res_model = load_model('./Ex_2.h5')
-exclusions_3_res_model = load_model('./Ex_3.h5')
-exclusions_4_res_model = load_model('./Ex_4.h5')
-exclusions_5_res_model = load_model('./Ex_5.h5')
-exclusions_6_res_model = load_model('./Ex_6.h5')
-exclusions_7_res_model = load_model('./Ex_7.h5')
-exclusions_8_res_model = load_model('./Ex_8.h5')
-exclusions_9_res_model = load_model('./Ex_9.h5')
-exclusions_10_res_model = load_model('./Ex_10.h5')
+exclusions_1_res_model = load_model('./ex_1.h5')
+exclusions_2_res_model = load_model('./ex_2.h5')
+exclusions_3_res_model = load_model('./ex_3.h5')
+exclusions_4_res_model = load_model('./ex_4.h5')
+exclusions_5_res_model = load_model('./ex_5.h5')
+exclusions_6_res_model = load_model('./ex_6.h5')
+exclusions_7_res_model = load_model('./ex_7.h5')
+exclusions_8_res_model = load_model('./ex_8.h5')
+exclusions_9_res_model = load_model('./ex_9.h5')
+exclusions_10_res_model = load_model('./ex_10.h5')
+exclusions_11_res_model = load_model('./ex_11.h5')
+exclusions_12_res_model = load_model('./ex_12.h5')
+
 
 daily_price_res_model = load_model('./Daily_Pricing_3.h5')
 monthly_price_res_model = load_model('./Monthly_Pricing_3.h5')
@@ -105,6 +108,16 @@ def predict_exclusion_9(audio):
 
 def predict_exclusion_10(audio):
     prob=exclusions_10_res_model.predict(audio.reshape(1,40,1))
+    index=np.argmax(prob[0])
+    return (classes[index],np.amax(prob[0]))
+
+def predict_exclusion_11(audio):
+    prob=exclusions_11_res_model.predict(audio.reshape(1,40,1))
+    index=np.argmax(prob[0])
+    return (classes[index],np.amax(prob[0]))
+
+def predict_exclusion_12(audio):
+    prob=exclusions_12_res_model.predict(audio.reshape(1,40,1))
     index=np.argmax(prob[0])
     return (classes[index],np.amax(prob[0]))
 
@@ -225,24 +238,29 @@ if uploaded_file is not None:
          st.markdown("4.Manshiyat ya kisi b Nasha Awar cheez k Istemal se Nuqsan explained: "+boldTag(exclusions_4_res[0])+ exclusions_4_res[0]+"</b> Confidence: <b>"+str(exclusions_4_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_5_res = predict_exclusion_5(featuesAll)
-         st.markdown("5.Qudarti Afat ya Dehshat Gardana Karwai me bare pemane pr hone walay Nuq explained: "+boldTag(exclusions_5_res[0])+ exclusions_5_res[0]+"</b> Confidence: <b>"+str(exclusions_5_res[1]*100)+"</b>", unsafe_allow_html=True)
+         st.markdown("5.Qudarti Afatya Dehshat Gardana Karwai me bare pemane pr hone walay Nuqsan me Haqumat Emergency ka Alan kr de ya explained: "+boldTag(exclusions_5_res[0])+ exclusions_5_res[0]+"</b> Confidence: <b>"+str(exclusions_5_res[1]*100)+"</b>", unsafe_allow_html=True)
         
          exclusions_6_res = predict_exclusion_6(featuesAll)
          st.markdown("6.Civil Nafarmani ki surat mea policy claim nahi hoge explained: "+boldTag(exclusions_6_res[0])+ exclusions_6_res[0]+"</b> Confidence: <b>"+str(exclusions_6_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_7_res = predict_exclusion_7(featuesAll)
-         st.markdown("7.Hifazat Plus mein Khud ko jaan bhooj kar pohanchaye Janay walay nuqsan, khudkhushi ki koshish explained: "+boldTag(exclusions_7_res[0])
+         st.markdown("7.Khud ko jaan bhooj kar pohanchaye Janay walay nuqsan explained: "+boldTag(exclusions_7_res[0])
          + exclusions_7_res[0]+"</b> Confidence: <b>"+str(exclusions_7_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_8_res = predict_exclusion_8(featuesAll)
-         st.markdown("8.doctor k mashawary se laparwahi ki surat mein honay wala nuqsan explained: "+boldTag(exclusions_8_res[0])+ exclusions_8_res[0]+"</b> Confidence: <b>"+str(exclusions_8_res[1]*100)+"</b>", unsafe_allow_html=True)
+         st.markdown("8.khudkhushi ki koshish explained: "+boldTag(exclusions_8_res[0])+ exclusions_8_res[0]+"</b> Confidence: <b>"+str(exclusions_8_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_9_res = predict_exclusion_9(featuesAll)
-         st.markdown("9.cosmetic surgery jo k ghair zaroori ho jaisa k chehray ki khoobsurti barhanay jaisay treatment,Doran e hamal honay wali koi bhi paicheedgi jab k sarifko service liye huay 9 maheenay ka arsa na hua ho explained: "+boldTag(exclusions_9_res[0])+ exclusions_9_res[0]+"</b> Confidence: <b>"+str(exclusions_9_res[1]*100)+"</b>", unsafe_allow_html=True)
+         st.markdown("9.doctor k mashawary se laparwahi ki surat mein honay wala nuqsan explained: "+boldTag(exclusions_9_res[0])+ exclusions_9_res[0]+"</b> Confidence: <b>"+str(exclusions_9_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_10_res = predict_exclusion_10(featuesAll)
-         st.markdown("10.Koi bhi baari tibi bemari ji ki tashkhees coverage shuru honay se 3 maah pehlay hoi ho explained: "+boldTag(exclusions_10_res[0])+ exclusions_10_res[0]+"</b> Confidence: <b>"+str(exclusions_10_res[1]*100)+"</b>", unsafe_allow_html=True)
+         st.markdown("10.cosmentic surgery jo k ghair zaroori ho jaisa k chehray ki khoobsurti barhanay jaisay treatment explained: "+boldTag(exclusions_10_res[0])+ exclusions_10_res[0]+"</b> Confidence: <b>"+str(exclusions_10_res[1]*100)+"</b>", unsafe_allow_html=True)
          
+         exclusions_11_res = predict_exclusion_11(featuesAll)
+         st.markdown("11.Doran e hamal honay wali koi bhi paicheedgi jab k sarif ko service liye huay 9 maheenay ka arsa na hua ho explained: "+boldTag(exclusions_11_res[0])+ exclusions_11_res[0]+"</b> Confidence: <b>"+str(exclusions_11_res[1]*100)+"</b>", unsafe_allow_html=True)
+         
+         exclusions_12_res = predict_exclusion_12(featuesAll)
+         st.markdown("12.Koi bhi baari tibi bemari jis ki tashkhees coverage shuru honay se 3 maah pehlay hoi ho, policy claim nahi ho gi explained: "+boldTag(exclusions_12_res[0])+ exclusions_12_res[0]+"</b> Confidence: <b>"+str(exclusions_12_res[1]*100)+"</b>", unsafe_allow_html=True)
 
          daily_price_res = predict_daily_price(featuesAll)
          st.markdown("daily price explained: "+boldTag(daily_price_res[0])+ daily_price_res[0]+"</b> Confidence: <b>"+str(daily_price_res[1]*100)+"</b>", unsafe_allow_html=True)
