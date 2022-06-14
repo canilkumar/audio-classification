@@ -29,7 +29,7 @@ exclusions_8_res_model = load_model('./ex_81.h5')
 exclusions_9_res_model = load_model('./ex_91.h5')
 exclusions_10_res_model = load_model('./ex_10_1.h5')
 exclusions_11_res_model = load_model('./ex_11.h5')
-#exclusions_12_res_model = load_model('./ex_12.h5')
+
 
 
 daily_price_res_model = load_model('./Daily_Pricing_3.h5')
@@ -116,10 +116,6 @@ def predict_exclusion_11(audio):
     index=np.argmax(prob[0])
     return (classes[index],np.amax(prob[0]))
 
-#def predict_exclusion_12(audio):
-    prob=exclusions_12_res_model.predict(audio.reshape(1,40,1))
-    index=np.argmax(prob[0])
-    return (classes[index],np.amax(prob[0]))
 
 def predict_daily_price(audio):
     prob=daily_price_res_model.predict(audio.reshape(1,40,1))
@@ -259,9 +255,6 @@ if uploaded_file is not None:
          exclusions_11_res = predict_exclusion_11(featuesAll)
          st.markdown("11.Doran e hamal honay wali koi bhi paicheedgi jab k sarif ko service liye huay 9 maheenay ka arsa na hua ho, Koi bhi baari tibi bemari jis ki tashkhees coverage shuru honay se 3 maah pehlay hoi ho, policy claim nahi ho gi explained: "+boldTag(exclusions_11_res[0])+ exclusions_11_res[0]+"</b> Confidence: <b>"+str(exclusions_11_res[1]*100)+"</b>", unsafe_allow_html=True)
          
-         #exclusions_12_res = predict_exclusion_12(featuesAll)
-         #st.markdown("12.Koi bhi baari tibi bemari jis ki tashkhees coverage shuru honay se 3 maah pehlay hoi ho, policy claim nahi ho gi explained: "+boldTag(exclusions_12_res[0])+ exclusions_12_res[0]+"</b> Confidence: <b>"+str(exclusions_12_res[1]*100)+"</b>", unsafe_allow_html=True)
-
          daily_price_res = predict_daily_price(featuesAll)
          st.markdown("daily price explained: "+boldTag(daily_price_res[0])+ daily_price_res[0]+"</b> Confidence: <b>"+str(daily_price_res[1]*100)+"</b>", unsafe_allow_html=True)
          
