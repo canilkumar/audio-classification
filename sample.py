@@ -32,7 +32,7 @@ exclusions_11_res_model = load_model('./ex_11.h5')
 
 exclu_group_a_res_model = load_model('./Exclu_g_a.h5')
 
-exclu_group_b_res_model = load_model('./')
+exclu_group_b_res_model = load_model('./Exclu_g_b.h5')
 
 daily_price_res_model = load_model('./Daily_Pricing_4.h5')
 
