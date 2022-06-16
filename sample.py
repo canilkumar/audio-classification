@@ -30,10 +30,14 @@ exclusions_9_res_model = load_model('./ex_91.h5')
 exclusions_10_res_model = load_model('./ex_10_1.h5')
 exclusions_11_res_model = load_model('./ex_11.h5')
 
+exclu_group_a_res_model = load_model('./Exclu_g_a.h5')
 
+exclu_group_b_res_model = load_model('./')
 
 daily_price_res_model = load_model('./Daily_Pricing_4.h5')
+
 monthly_price_res_model = load_model('./Monthly_Pricing_4.h5')
+
 
 
 def predict_callClasification_res(audio):
@@ -116,6 +120,15 @@ def predict_exclusion_11(audio):
     index=np.argmax(prob[0])
     return (classes[index],np.amax(prob[0]))
 
+def predict_exclusion_group_a(audio):
+    prob=exclu_group_a_res_model.predict(audio.reshape(1,40,1))
+    index=np.argmax(prob[0])
+    return (classes[index],np.amax(prob[0]))
+
+def predict_exclusion_group_b(audio):
+    prob=exclu_group_b_res_model.predict(audio.reshape(1,40,1))
+    index=np.argmax(prob[0])
+    return (classes[index],np.amax(prob[0]))
 
 def predict_daily_price(audio):
     prob=daily_price_res_model.predict(audio.reshape(1,40,1))
@@ -255,6 +268,12 @@ if uploaded_file is not None:
          exclusions_11_res = predict_exclusion_11(featuesAll)
          st.markdown("11.Doran e hamal honay wali koi bhi paicheedgi jab k sarif ko service liye huay 9 maheenay ka arsa na hua ho, Koi bhi baari tibi bemari jis ki tashkhees coverage shuru honay se 3 maah pehlay hoi ho, policy claim nahi ho gi explained: "+boldTag(exclusions_11_res[0])+ exclusions_11_res[0]+"</b> Confidence: <b>"+str(exclusions_11_res[1]*100)+"</b>", unsafe_allow_html=True)
          
+         exclu_group_a_res = predict_exclusion_group_a(featuesAll)
+         st.markdown("Exclusion I explained: "+boldTag(exclu_group_a_res[0])+ exclu_group_a_res[0]+"</b> Confidence: <b>"+str(exclu_group_a_res[1]*100)+"</b>", unsafe_allow_html=True)
+
+         exclu_group_b_res = predict_exclusion_group_b(featuesAll)
+         st.markdown("Exclusion II explained: "+boldTag(exclu_group_b_res[0])+ exclu_group_b_res[0]+"</b> Confidence: <b>"+str(exclu_group_b_res[1]*100)+"</b>", unsafe_allow_html=True)
+
          daily_price_res = predict_daily_price(featuesAll)
          st.markdown("daily price explained: "+boldTag(daily_price_res[0])+ daily_price_res[0]+"</b> Confidence: <b>"+str(daily_price_res[1]*100)+"</b>", unsafe_allow_html=True)
          
