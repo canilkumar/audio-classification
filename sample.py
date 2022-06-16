@@ -32,7 +32,7 @@ exclusions_11_res_model = load_model('./ex_11.h5')
 
 
 
-daily_price_res_model = load_model('./Daily_Pricing_3.h5')
+daily_price_res_model = load_model('./Daily_Pricing_4.h5')
 monthly_price_res_model = load_model('./Monthly_Pricing_3.h5')
 
 
