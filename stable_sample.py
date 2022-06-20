@@ -274,7 +274,7 @@ if uploaded_file is not None:
          exclu_group_b_res = predict_exclusion_group_b(featuesAll)
          st.markdown("Exclusion II explained: "+boldTag(exclu_group_b_res[0])+ exclu_group_b_res[0]+"</b> Confidence: <b>"+str(exclu_group_b_res[1]*100)+"</b>", unsafe_allow_html=True)
 
-         st.title("Pricing Points explanation")
+         st.title("Pricing Points Explanation")
 
          daily_price_res = predict_daily_price(featuesAll)
          st.markdown("daily price explained: "+boldTag(daily_price_res[0])+ daily_price_res[0]+"</b> Confidence: <b>"+str(daily_price_res[1]*100)+"</b>", unsafe_allow_html=True)
