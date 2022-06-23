@@ -275,7 +275,7 @@ if uploaded_file is not None:
          st.markdown("Exclusion II explained: "+boldTag(exclu_group_b_res[0])+ exclu_group_b_res[0]+"</b> Confidence: <b>"+str(exclu_group_b_res[1]*100)+"</b>", unsafe_allow_html=True)
 
          daily_price_res = predict_daily_price(featuesAll)
-         st.markdown("daily price explained: "+boldTag(daily_price_res[0])+ daily_price_res[0]+"</b> Confidence: <b>"+str(daily_price_res[1]*100)+"</b>", unsafe_allow_html=True)
+         st.markdown("Daily price explained: "+boldTag(daily_price_res[0])+ daily_price_res[0]+"</b> Confidence: <b>"+str(daily_price_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          monthly_price_res = predict_monthly_price(featuesAll)
          st.markdown("monthly price explained: "+boldTag(monthly_price_res[0])+ monthly_price_res[0]+"</b> Confidence: <b>"+str(monthly_price_res[1]*100)+"</b>", unsafe_allow_html=True)
