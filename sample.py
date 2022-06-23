@@ -263,7 +263,7 @@ if uploaded_file is not None:
          st.markdown("9.Doctor k mashawary se laparwahi ki surat mein honay wala nuqsan explained: "+boldTag(exclusions_9_res[0])+ exclusions_9_res[0]+"</b> Confidence: <b>"+str(exclusions_9_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_10_res = predict_exclusion_10(featuesAll)
-         st.markdown("10.cosmentic surgery jo k ghair zaroori ho jaisa k chehray ki khoobsurti barhanay jaisay treatment explained: "+boldTag(exclusions_10_res[0])+ exclusions_10_res[0]+"</b> Confidence: <b>"+str(exclusions_10_res[1]*100)+"</b>", unsafe_allow_html=True)
+         st.markdown("10.Cosmentic surgery jo k ghair zaroori ho jaisa k chehray ki khoobsurti barhanay jaisay treatment explained: "+boldTag(exclusions_10_res[0])+ exclusions_10_res[0]+"</b> Confidence: <b>"+str(exclusions_10_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_11_res = predict_exclusion_11(featuesAll)
          st.markdown("11.Doran e hamal honay wali koi bhi paicheedgi jab k sarif ko service liye huay 9 maheenay ka arsa na hua ho, Koi bhi baari tibi bemari jis ki tashkhees coverage shuru honay se 3 maah pehlay hoi ho, policy claim nahi ho gi explained: "+boldTag(exclusions_11_res[0])+ exclusions_11_res[0]+"</b> Confidence: <b>"+str(exclusions_11_res[1]*100)+"</b>", unsafe_allow_html=True)
