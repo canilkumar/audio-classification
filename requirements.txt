@@ -1,5 +1,6 @@
 keras
 tensorflow
+librosa
 sklearn
 numpy==1.22
 matplotlib
