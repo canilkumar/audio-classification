@@ -217,7 +217,7 @@ if uploaded_file is not None:
         
         if(call_res[0] =='Yes'):
          customer_res = predict_customer_res(featuesAll)
-         st.markdown("customer response: "+boldTag(customer_res[0])+ customer_res[0]+"</b> Confidence: <b>"+str(customer_res[1]*100)+"</b>", unsafe_allow_html=True)
+         st.markdown("Customer response: "+boldTag(customer_res[0])+ customer_res[0]+"</b> Confidence: <b>"+str(customer_res[1]*100)+"</b>", unsafe_allow_html=True)
          #st.write("customer response: "+ customer_res[0]+" Confidence: "+str(customer_res[1]*100))
          #st.title("customer response conf: "+ str(customer_res[1]))
          # " Confidence: "+customer_res[1]
