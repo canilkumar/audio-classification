@@ -210,7 +210,7 @@ if uploaded_file is not None:
 
         
         call_res = predict_callClasification_res(featuesAll)
-        st.markdown("Is it a call: "+boldTag(call_res[0]) + call_res[0]+"</b> Confidence: <b>"+str(call_res[1]*100)+"</b>", unsafe_allow_html=True)
+        st.markdown("Is it a Call: "+boldTag(call_res[0]) + call_res[0]+"</b> Confidence: <b>"+str(call_res[1]*100)+"</b>", unsafe_allow_html=True)
 
         # st.write("Is a call : "+ call_res[0]+" Confidence: "+str(call_res[1]*100))
 
