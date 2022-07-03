@@ -210,14 +210,14 @@ if uploaded_file is not None:
 
         
         call_res = predict_callClasification_res(featuesAll)
-        st.markdown("Is it a Call: "+boldTag(call_res[0]) + call_res[0]+"</b> Confidence: <b>"+str(call_res[1]*100)+"</b>", unsafe_allow_html=True)
+        st.markdown("Is it a call: "+boldTag(call_res[0]) + call_res[0]+"</b> Confidence: <b>"+str(call_res[1]*100)+"</b>", unsafe_allow_html=True)
 
         # st.write("Is a call : "+ call_res[0]+" Confidence: "+str(call_res[1]*100))
 
         
         if(call_res[0] =='Yes'):
          customer_res = predict_customer_res(featuesAll)
-         st.markdown("Customer response: "+boldTag(customer_res[0])+ customer_res[0]+"</b> Confidence: <b>"+str(customer_res[1]*100)+"</b>", unsafe_allow_html=True)
+         st.markdown("customer response: "+boldTag(customer_res[0])+ customer_res[0]+"</b> Confidence: <b>"+str(customer_res[1]*100)+"</b>", unsafe_allow_html=True)
          #st.write("customer response: "+ customer_res[0]+" Confidence: "+str(customer_res[1]*100))
          #st.title("customer response conf: "+ str(customer_res[1]))
          # " Confidence: "+customer_res[1]
@@ -228,7 +228,7 @@ if uploaded_file is not None:
         #  st.title("exclusions explained: "+ exclusions_res[0]+" Confidence: "+str(exclusions_res[1]*100))
         
          claim_res = predict_claim(featuesAll)
-         st.markdown("Claim Process explained: "+boldTag(claim_res[0])+ claim_res[0]+"</b> Confidence: <b>"+str(claim_res[1]*100)+"</b>", unsafe_allow_html=True)
+         st.markdown("claim process explained: "+boldTag(claim_res[0])+ claim_res[0]+"</b> Confidence: <b>"+str(claim_res[1]*100)+"</b>", unsafe_allow_html=True)
 
          #st.write("claim process explained: "+ claim_res[0]+" Confidence: "+str(claim_res[1]*100))
 
@@ -263,7 +263,7 @@ if uploaded_file is not None:
          st.markdown("9.Doctor k mashawary se laparwahi ki surat mein honay wala nuqsan explained: "+boldTag(exclusions_9_res[0])+ exclusions_9_res[0]+"</b> Confidence: <b>"+str(exclusions_9_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_10_res = predict_exclusion_10(featuesAll)
-         st.markdown("10.Cosmentic surgery jo k ghair zaroori ho jaisa k chehray ki khoobsurti barhanay jaisay treatment explained: "+boldTag(exclusions_10_res[0])+ exclusions_10_res[0]+"</b> Confidence: <b>"+str(exclusions_10_res[1]*100)+"</b>", unsafe_allow_html=True)
+         st.markdown("10.cosmentic surgery jo k ghair zaroori ho jaisa k chehray ki khoobsurti barhanay jaisay treatment explained: "+boldTag(exclusions_10_res[0])+ exclusions_10_res[0]+"</b> Confidence: <b>"+str(exclusions_10_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_11_res = predict_exclusion_11(featuesAll)
          st.markdown("11.Doran e hamal honay wali koi bhi paicheedgi jab k sarif ko service liye huay 9 maheenay ka arsa na hua ho, Koi bhi baari tibi bemari jis ki tashkhees coverage shuru honay se 3 maah pehlay hoi ho, policy claim nahi ho gi explained: "+boldTag(exclusions_11_res[0])+ exclusions_11_res[0]+"</b> Confidence: <b>"+str(exclusions_11_res[1]*100)+"</b>", unsafe_allow_html=True)
@@ -274,11 +274,13 @@ if uploaded_file is not None:
          exclu_group_b_res = predict_exclusion_group_b(featuesAll)
          st.markdown("Exclusion II explained: "+boldTag(exclu_group_b_res[0])+ exclu_group_b_res[0]+"</b> Confidence: <b>"+str(exclu_group_b_res[1]*100)+"</b>", unsafe_allow_html=True)
 
+         st.title("Pricing Points Explanation")
+
          daily_price_res = predict_daily_price(featuesAll)
-         st.markdown("Daily Price explained: "+boldTag(daily_price_res[0])+ daily_price_res[0]+"</b> Confidence: <b>"+str(daily_price_res[1]*100)+"</b>", unsafe_allow_html=True)
+         st.markdown("daily price explained: "+boldTag(daily_price_res[0])+ daily_price_res[0]+"</b> Confidence: <b>"+str(daily_price_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          monthly_price_res = predict_monthly_price(featuesAll)
-         st.markdown("Monthly price explained: "+boldTag(monthly_price_res[0])+ monthly_price_res[0]+"</b> Confidence: <b>"+str(monthly_price_res[1]*100)+"</b>", unsafe_allow_html=True)
+         st.markdown("monthly price explained: "+boldTag(monthly_price_res[0])+ monthly_price_res[0]+"</b> Confidence: <b>"+str(monthly_price_res[1]*100)+"</b>", unsafe_allow_html=True)
         
         
 
