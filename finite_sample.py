@@ -228,7 +228,7 @@ if uploaded_file is not None:
         #  st.title("exclusions explained: "+ exclusions_res[0]+" Confidence: "+str(exclusions_res[1]*100))
         
          claim_res = predict_claim(featuesAll)
-         st.markdown("Claim Process Explained: "+boldTag(claim_res[0])+ claim_res[0]+"</b> Confidence: <b>"+str(claim_res[1]*100)+"</b>", unsafe_allow_html=True)
+         st.markdown("Claim Process explained: "+boldTag(claim_res[0])+ claim_res[0]+"</b> Confidence: <b>"+str(claim_res[1]*100)+"</b>", unsafe_allow_html=True)
 
          #st.write("claim process explained: "+ claim_res[0]+" Confidence: "+str(claim_res[1]*100))
 
