@@ -34,7 +34,7 @@ exclu_group_a_res_model = load_model('./Exclu_g_a.h5')
 
 exclu_group_b_res_model = load_model('./Exclu_g_b.h5')
 
-daily_price_res_model = load_model('./Daily_Pricing_4.h5')
+daily_price_res_model = load_model('./Daily_Pricing_5.h5')
 
 monthly_price_res_model = load_model('./Monthly_Pricing_4.h5')
 
