@@ -28,7 +28,7 @@ exclusions_7_res_model = load_model('./exclusion_7a.h5')
 exclusions_8_res_model = load_model('./exclusion_8a.h5')
 exclusions_9_res_model = load_model('./exclusion_9a.h5')
 exclusions_10_res_model = load_model('./exclusion_10a.h5')
-exclusions_11_res_model = load_model('./ex_11.h5')
+exclusions_11_res_model = load_model('./exclusion_11a.h5')
 
 exclu_group_a_res_model = load_model('./Exclu_g_a.h5')
 
