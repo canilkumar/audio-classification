@@ -8,7 +8,7 @@ le = LabelEncoder()
 y = le.fit_transform(['No','Yes'])
 classes = list(le.classes_)
 
-customer_res_model = load_model('./Cr_4.h5')
+customer_res_model = load_model('./Cr_5.h5')
 
 pricing_res_model = load_model('./Pricing_13.h5')
 
