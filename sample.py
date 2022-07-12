@@ -18,8 +18,8 @@ claim_res_model = load_model('./Cp_5.h5')
 
 callClasification_res_model = load_model('./call_audio.h5')
 
-exclusions_1_res_model = load_model('./ex_101.h5')
-exclusions_2_res_model = load_model('./ex_21.h5')
+exclusions_1_res_model = load_model('./exclusion_1a.h5')
+exclusions_2_res_model = load_model('./exclusion_2a.h5')
 exclusions_3_res_model = load_model('./ex_31.h5')
 exclusions_4_res_model = load_model('./ex_41.h5')
 exclusions_5_res_model = load_model('./ex_51.h5')
