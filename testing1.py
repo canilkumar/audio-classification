@@ -8,35 +8,35 @@ le = LabelEncoder()
 y = le.fit_transform(['No','Yes'])
 classes = list(le.classes_)
 
-customer_res_model = load_model('./Cr_5.h5')
+customer_res_model = load_model('./Customer_Response_2.h5')
 
 pricing_res_model = load_model('./Pricing_13.h5')
 
 exclusions_res_model = load_model('./Insurance_Exclusion_13.h5')
 
-claim_res_model = load_model('./Cp_5.h5')
+claim_res_model = load_model('./Claim_Process_1.h5')
 
 callClasification_res_model = load_model('./call_audio.h5')
 
-exclusions_1_res_model = load_model('./exclusion_1a.h5')
-exclusions_2_res_model = load_model('./exclusion_2a.h5')
-exclusions_3_res_model = load_model('./exclusion_3a.h5')
-exclusions_4_res_model = load_model('./exclusion_4a.h5')
-exclusions_5_res_model = load_model('./exclusion_5a.h5')
-exclusions_6_res_model = load_model('./exclusion_6a.h5')
-exclusions_7_res_model = load_model('./exclusion_7a.h5')
-exclusions_8_res_model = load_model('./exclusion_8a.h5')
-exclusions_9_res_model = load_model('./exclusion_9a.h5')
-exclusions_10_res_model = load_model('./exclusion_10a.h5')
-exclusions_11_res_model = load_model('./exclusion_11a.h5')
+exclusions_1_res_model = load_model('./ex_1_1a.h5')
+exclusions_2_res_model = load_model('./ex_2_1a.h5')
+exclusions_3_res_model = load_model('./ex_3_1a.h5')
+exclusions_4_res_model = load_model('./ex_4_1a.h5')
+exclusions_5_res_model = load_model('./ex_5_1a.h5')
+exclusions_6_res_model = load_model('./ex_6_1a.h5')
+exclusions_7_res_model = load_model('./ex_7_1a.h5')
+exclusions_8_res_model = load_model('./ex_8_1a.h5')
+exclusions_9_res_model = load_model('./ex_9_1a.h5')
+exclusions_10_res_model = load_model('./ex_10_1a.h5')
+exclusions_11_res_model = load_model('./ex_11_1a.h5')
 
 #exclu_group_a_res_model = load_model('./Exclu_g_a.h5')
 
 #exclu_group_b_res_model = load_model('./Exclu_g_b.h5')
 
-daily_price_res_model = load_model('./Daily_Pricing_5.h5')
+daily_price_res_model = load_model('./Daily_Pricing_6.h5')
 
-monthly_price_res_model = load_model('./Monthly_Pricing_5.h5')
+monthly_price_res_model = load_model('./Monthly_Pricing_6.h5')
 
 
 
