@@ -120,12 +120,12 @@ def predict_exclusion_11(audio):
     index=np.argmax(prob[0])
     return (classes[index],np.amax(prob[0]))
 
-#def predict_exclusion_group_a(audio):
+def predict_exclusion_group_a(audio):
     prob=exclu_group_a_res_model.predict(audio.reshape(1,40,1))
     index=np.argmax(prob[0])
     return (classes[index],np.amax(prob[0]))
 
-#def predict_exclusion_group_b(audio):
+def predict_exclusion_group_b(audio):
     prob=exclu_group_b_res_model.predict(audio.reshape(1,40,1))
     index=np.argmax(prob[0])
     return (classes[index],np.amax(prob[0]))
