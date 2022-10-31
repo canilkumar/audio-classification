@@ -14,7 +14,7 @@ pricing_res_model = load_model('./Pricing_13.h5')
 
 exclusions_res_model = load_model('./Insurance_Exclusion_13.h5')
 
-claim_res_model = load_model('./Cp_5.h5')
+claim_res_model = load_model('./Claim_Process_1.h5')
 
 callClasification_res_model = load_model('./call_audio.h5')
 
