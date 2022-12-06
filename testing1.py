@@ -175,7 +175,7 @@ sns.set()
 
 from PIL import Image
 
-st.title('audio classifier')
+st.title('budio classifier')
 
 uploaded_file = st.file_uploader("Upload audio")
 
