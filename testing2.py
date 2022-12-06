@@ -20,7 +20,7 @@ callClasification_res_model = load_model('./call_audio.h5')
 
 exclusions_1_res_model = load_model('./ex_1_1a.h5')
 exclusions_2_res_model = load_model('./ex_2_1a.h5')
-exclusions_3_res_model = load_model('./ex_3_1a.h5')
+qatal_res_model = load_model('./ex_3_1a.h5')
 exclusions_4_res_model = load_model('./ex_4_1a.h5')
 exclusions_5_res_model = load_model('./ex_5_1a.h5')
 exclusions_6_res_model = load_model('./ex_6_1a.h5')
@@ -75,8 +75,8 @@ def predict_exclusion_2(audio):
     index=np.argmax(prob[0])
     return (classes[index],np.amax(prob[0]))
 
-def predict_exclusion_3(audio):
-    prob=exclusions_3_res_model.predict(audio.reshape(1,40,1))
+def predict_qatal(audio):
+    prob=qatal_res_model.predict(audio.reshape(1,40,1))
     index=np.argmax(prob[0])
     return (classes[index],np.amax(prob[0]))
 
@@ -175,7 +175,7 @@ sns.set()
 
 from PIL import Image
 
-st.title('budio classifier')
+st.title('Audio Classifier')
 
 uploaded_file = st.file_uploader("Upload audio")
 
@@ -232,8 +232,8 @@ if uploaded_file is not None:
          exclusions_2_res = predict_exclusion_2(featuesAll)
          st.markdown("2.Halat Jang explained: "+boldTag(exclusions_2_res[0])+ exclusions_2_res[0]+"</b> Confidence: <b>"+str(exclusions_2_res[1]*100)+"</b>", unsafe_allow_html=True)
         
-         exclusions_3_res = predict_exclusion_3(featuesAll)
-         st.markdown("3.Agwa Baray Tawan explained: "+boldTag(exclusions_3_res[0])+ exclusions_3_res[0]+"</b> Confidence: <b>"+str(exclusions_3_res[1]*100)+"</b>", unsafe_allow_html=True)
+         qatal_res = predict_qatal(featuesAll)
+         st.markdown("3.Qatal explained: "+boldTag(qatal_res[0])+ qatal_res[0]+"</b> Confidence: <b>"+str(qatal_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_4_res = predict_exclusion_4(featuesAll)
          st.markdown("4.Manshiyat ya kisi b Nasha Awar cheez k Istemal se Nuqsan explained: "+boldTag(exclusions_4_res[0])+ exclusions_4_res[0]+"</b> Confidence: <b>"+str(exclusions_4_res[1]*100)+"</b>", unsafe_allow_html=True)
@@ -254,8 +254,8 @@ if uploaded_file is not None:
          exclusions_9_res = predict_exclusion_9(featuesAll)
          st.markdown("9.Doctor k mashawary se laparwahi ki surat mein honay wala nuqsan explained: "+boldTag(exclusions_9_res[0])+ exclusions_9_res[0]+"</b> Confidence: <b>"+str(exclusions_9_res[1]*100)+"</b>", unsafe_allow_html=True)
          
-         exclusions_10_res = predict_exclusion_10(featuesAll)
-         st.markdown("10.cosmentic surgery jo k ghair zaroori ho jaisa k chehray ki khoobsurti barhanay jaisay treatment explained: "+boldTag(exclusions_10_res[0])+ exclusions_10_res[0]+"</b> Confidence: <b>"+str(exclusions_10_res[1]*100)+"</b>", unsafe_allow_html=True)
+         #exclusions_10_res = predict_exclusion_10(featuesAll)
+         #st.markdown("10.cosmentic surgery jo k ghair zaroori ho jaisa k chehray ki khoobsurti barhanay jaisay treatment explained: "+boldTag(exclusions_10_res[0])+ exclusions_10_res[0]+"</b> Confidence: <b>"+str(exclusions_10_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_11_res = predict_exclusion_11(featuesAll)
          st.markdown("11.Doran e hamal honay wali koi bhi paicheedgi jab k sarif ko service liye huay 9 maheenay ka arsa na hua ho, Koi bhi baari tibi bemari jis ki tashkhees coverage shuru honay se 3 maah pehlay hoi ho, policy claim nahi ho gi explained: "+boldTag(exclusions_11_res[0])+ exclusions_11_res[0]+"</b> Confidence: <b>"+str(exclusions_11_res[1]*100)+"</b>", unsafe_allow_html=True)
