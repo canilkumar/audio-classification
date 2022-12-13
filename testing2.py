@@ -20,7 +20,7 @@ callClasification_res_model = load_model('./call_audio.h5')
 
 exclusions_1_res_model = load_model('./ex_1_1a.h5')
 exclusions_2_res_model = load_model('./ex_2_1a.h5')
-qatal_res_model = load_model('./ex_3_1a.h5')
+qatal_res_model = load_model('./qatal.h5')
 exclusions_4_res_model = load_model('./ex_4_1a.h5')
 exclusions_5_res_model = load_model('./ex_5_1a.h5')
 exclusions_6_res_model = load_model('./ex_6_1a.h5')
@@ -258,7 +258,7 @@ if uploaded_file is not None:
          #st.markdown("10.cosmentic surgery jo k ghair zaroori ho jaisa k chehray ki khoobsurti barhanay jaisay treatment explained: "+boldTag(exclusions_10_res[0])+ exclusions_10_res[0]+"</b> Confidence: <b>"+str(exclusions_10_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_11_res = predict_exclusion_11(featuesAll)
-         st.markdown("11.Doran e hamal honay wali koi bhi paicheedgi jab k sarif ko service liye huay 9 maheenay ka arsa na hua ho, Koi bhi baari tibi bemari jis ki tashkhees coverage shuru honay se 3 maah pehlay hoi ho, policy claim nahi ho gi explained: "+boldTag(exclusions_11_res[0])+ exclusions_11_res[0]+"</b> Confidence: <b>"+str(exclusions_11_res[1]*100)+"</b>", unsafe_allow_html=True)
+         st.markdown("10.Doran e hamal honay wali koi bhi paicheedgi jab k sarif ko service liye huay 9 maheenay ka arsa na hua ho, Koi bhi baari tibi bemari jis ki tashkhees coverage shuru honay se 3 maah pehlay hoi ho, policy claim nahi ho gi explained: "+boldTag(exclusions_11_res[0])+ exclusions_11_res[0]+"</b> Confidence: <b>"+str(exclusions_11_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          #exclu_group_a_res = predict_exclusion_group_a(featuesAll)
          #st.markdown("Exclusion I explained: "+boldTag(exclu_group_a_res[0])+ exclu_group_a_res[0]+"</b> Confidence: <b>"+str(exclu_group_a_res[1]*100)+"</b>", unsafe_allow_html=True)
