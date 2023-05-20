@@ -13,9 +13,10 @@ sns.set_theme(style="darkgrid")
 
 sns.set()
 
-st.title('Hi  V.M.N.SAI.SRINIVAS')
+st.title('Hi')
+st.title("N.SIVA BHARAT")
 from PIL import Image
 
-st.title('Welcome to Synycs')
+st.title('Welcome to INFOSYS')
 st.balloons()
-st.markdown("bde")
+st.markdown("many many more happy return of the day")
