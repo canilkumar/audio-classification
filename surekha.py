@@ -18,3 +18,4 @@ from PIL import Image
 
 st.title('Welcome to Synycs')
 st.balloons()
+st.markdown("bde")
