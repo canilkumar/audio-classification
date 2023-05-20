@@ -162,6 +162,7 @@ from helper import *
 #importing all the helper fxn from helper.py which we will create later
 
 import streamlit as st
+st.ballons()
 
 import os
 
@@ -273,7 +274,8 @@ if uploaded_file is not None:
          
          monthly_price_res = predict_monthly_price(featuesAll)
          st.markdown("monthly price explained: "+boldTag(monthly_price_res[0])+ monthly_price_res[0]+"</b> Confidence: <b>"+str(monthly_price_res[1]*100)+"</b>", unsafe_allow_html=True)
-        
+         
+         
         
 
         
