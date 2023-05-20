@@ -19,4 +19,4 @@ from PIL import Image
 
 st.title('Welcome to INFOSYS')
 st.balloons()
-st.markdown("many many more happy return of the day")
+st.markdown("many many more happy returns of the day")
