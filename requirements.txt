@@ -2,7 +2,7 @@ keras
 tensorflow
 librosa
 sklearn
-numpy==1.21
+numpy
 matplotlib
 helper
 seaborn
