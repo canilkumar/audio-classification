@@ -246,7 +246,7 @@ if uploaded_file is not None:
          st.markdown("6.Civil Nafarmani ki surat mea policy claim nahi hoge explained: "+boldTag(exclusions_6_res[0])+ exclusions_6_res[0]+"</b> Confidence: <b>"+str(exclusions_6_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_7_res = predict_exclusion_7(featuesAll)
-         st.markdown("7.Khud ko jaan bhooj kar pohanchaye Janay walay nuqsan explained: "+boldTag(exclusions_7_res[0])
+         st.markdown("7.Khud ko jaan bhooj kar Pohanchaye Janay walay nuqsan explained: "+boldTag(exclusions_7_res[0])
          + exclusions_7_res[0]+"</b> Confidence: <b>"+str(exclusions_7_res[1]*100)+"</b>", unsafe_allow_html=True)
          
          exclusions_8_res = predict_exclusion_8(featuesAll)
